@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap : http://pentface.ml/sitemap.xml
