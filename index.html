@@ -79,7 +79,7 @@
             </div>
 			
             <p class="result-message"></p>
-			<div id="label-container" class="d-flex flex-row justify-content-around"></div>
+			<div id="label-container" class="d-flex flex-column justify-content-around"></div>
             
             <div id="addThis" class="addthis_inline_share_toolbox_6lz1"></div>
 
@@ -92,7 +92,7 @@
     </div>
     <footer class="footer pt-5 container d-flex justify-content-center">
         <div>
-            <p>&copy; 조코딩 JoCoding 2020. All Rights Reserved. </p>
+            <p>&copy; LeeJaeHyun </p>
         </div>
     </footer>
     <script>
@@ -141,7 +141,7 @@
             model = await tmImage.load(modelURL, metadataURL);
             maxPredictions = model.getTotalClasses();
             labelContainer = document.getElementById("label-container");
-            for (let i = 0; i < maxPredictions; i++) {
+            for (let i = 0; i < 5; i++) {
                 var element = document.createElement("div")
                 element.classList.add("d-flex");
                 labelContainer.appendChild(element);
@@ -386,7 +386,7 @@
 						nameCol = "def2"
                 }
                 var label = "<div class='animal-label d-flex align-items-center " +nameCol+"'>" + labelTitle + "</div>"
-                var bar = "<div class='bar-container position-relative container'><div class='" + labelbar + "-box'></div><div class='d-flex justify-content-center align-items-center " + labelbar + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+                var bar = "<div class='bar-container position-relative container'><div class='" + labelbar + "-box'><div class='d-flex justify-content-center align-items-center " + labelbar + "-bar' style='width:" + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div></div>"
                 labelContainer.childNodes[i].innerHTML = label + bar;
             }
         }
